@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-button (click)="close()">
+        <ion-icon name="close-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary" fill="solid">Post</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar color="dark">
+    <ion-segment value="create-post">
+      <ion-segment-button value="add-question">
+        Add Question
+      </ion-segment-button>
+      <ion-segment-button value="create-post">
+        Create Post
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <ion-item lines="none">
+    <ion-avatar slot="start">
+      <img src="assets/profile1.jpg" />
+    </ion-avatar>
+    <ion-label>
+      <h3>Jude Ralph</h3>
+      <ion-button fill="outline" size="small">Choose credential</ion-button>
+    </ion-label>
+  </ion-item>
+  <ion-textarea placeholder="Say something..." autoGrow="true"></ion-textarea>
+  <ion-footer style="position: absolute; bottom: 0; width: 100%;">
+    <ion-buttons>
+      <ion-button>
+        <ion-icon name="text-outline"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="image-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-footer>
+</ion-content>

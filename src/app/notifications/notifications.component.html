@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-avatar slot="start">
+      <img src="assets/profile1.jpg" />
+    </ion-avatar>
+    <ion-title>Notifications</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="search" class="icon-header"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar color="dark">
+    <ion-label>All Notifications Read</ion-label>
+    <ion-buttons slot="end">
+      <ion-icon name="settings-outline"></ion-icon>
+      <ion-icon name="options-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" class="ion-padding">
+  <div class="notification-center">
+    <ion-icon name="notifications-outline" class="notification-bell"></ion-icon>
+    <h2>No New Notifications</h2>
+    <p>Notifications you received in 
+      the last 30 days will show up here.</p>
+  </div>
+</ion-content>
+
+<!-- ...existing notification content... -->
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button [routerLink]="['/home']">
+      <ion-icon name="home"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button [routerLink]="['/answer']">
+      <ion-icon name="create-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button [routerLink]="['/notifications']">
+      <ion-icon name="notifications-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button>
+       <ion-tab-button [routerLink]="['/profile']">
+      <ion-icon name="person-outline"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

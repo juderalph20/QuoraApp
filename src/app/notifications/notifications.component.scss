@@ -1,0 +1,13 @@
+/* filepath: src/app/notifications/notifications.page.scss */
+.notification-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+  color: #fff;
+}
+.notification-bell {
+  font-size: 80px;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}

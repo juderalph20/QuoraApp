@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Jude Ralph</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <div class="profile-header" style="text-align:center; padding: 16px;">
+    <ion-avatar style="margin:auto;">
+      <img src="assets/profile1.jpg" />
+    </ion-avatar>
+    <h2 style="margin:8px 0 0 0;">Jude Ralph</h2>
+    <p style="margin:0; color:gray;">0 followers · 0 following</p>
+    <ion-button expand="block" fill="outline" style="margin-top:8px;">
+      Edit profile
+    </ion-button>
+    <ion-icon name="share-outline" slot="end" style="margin-left:8px;"></ion-icon>
+  </div>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Credentials & Highlights</ion-card-title>
+      <ion-button fill="clear" size="small" slot="end">
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-button>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item lines="none">
+          <ion-icon name="briefcase-outline" slot="start"></ion-icon>
+          <ion-label color="primary"><a>Add employment credential</a></ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-icon name="school-outline" slot="start"></ion-icon>
+          <ion-label color="primary"><a>Add education credential</a></ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-icon name="location-outline" slot="start"></ion-icon>
+          <ion-label color="primary"><a>Add location credential</a></ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-icon name="calendar-outline" slot="start"></ion-icon>
+          <ion-label>Joined September 2022</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-segment value="profile" color="dark">
+    <ion-segment-button value="profile">
+      Profile
+    </ion-segment-button>
+    <ion-segment-button value="answers">
+      0 Answers
+    </ion-segment-button>
+    <ion-segment-button value="questions">
+      0 Questions
+    </ion-segment-button>
+    <ion-segment-button value="posts">
+      0 Posts
+    </ion-segment-button>
+    <ion-segment-button value="followers">
+      0 Followers
+    </ion-segment-button>
+    <ion-segment-button value="following">
+      0 Following
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        <h3>Profile</h3>
+      </ion-label>
+      <ion-select interface="popover" placeholder="Most recent"></ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-searchbar placeholder="Search content"></ion-searchbar>
+    </ion-item>
+    <div style="width:100%;text-align:center;padding:32px 0;">
+      <ion-icon name="mail-open-outline" style="font-size:64px;color:gray;"></ion-icon>
+      <p style="color:gray;">You haven't shared, answered or posted anything yet</p>
+    </div>
+  </ion-list>
+</ion-content>
