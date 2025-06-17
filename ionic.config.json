@@ -1,0 +1,7 @@
+{
+  "name": "quoraApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
