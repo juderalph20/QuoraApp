@@ -11,3 +11,14 @@
   margin-bottom: 20px;
   opacity: 0.5;
 }
+.notification-center h1 {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center */
+  align-items: center;     /* horizontal center */
+  text-align: center;
+  color: #b0b3b8;
+  font-size: 16px;
+  font-weight: 500;
+}

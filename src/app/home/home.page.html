@@ -6,24 +6,34 @@
       </ion-avatar>
     </ion-buttons>
     <ion-title>Home</ion-title>
-  </ion-toolbar>
-
-  <ion-toolbar class="sub-header">
-    <ion-searchbar
-      [(ngModel)]="searchTerm"
-      placeholder="What do you want to ask or share?"
-      showCancelButton="never"
-      (keyup.enter)="onSearch()"
-    ></ion-searchbar>
     <ion-buttons slot="end">
-      <ion-button (click)="onSearch()">
-        <ion-icon name="search"></ion-icon>
+      <ion-button>
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="add-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 
+    <ion-toolbar class="sub-header">
+    <div class="search-container">
+      <ion-avatar class="avatar">
+        <img src="assets/profile1.jpg" />
+      </ion-avatar>
+      <input
+        [(ngModel)]="searchTerm"
+        type="text"
+        placeholder="What do you want to ask or share?"
+        class="search-input"
+        (keyup.enter)="onSearch()"
+      />
+    </div>
+  </ion-toolbar>
+
   <ion-toolbar class="action-toolbar">
     <ion-buttons>
+      <ion-button fill="clear" class="toolbar-button" (click)="goToCreatePost()">Ask</ion-button>
       <ion-button fill="clear" class="toolbar-button" (click)="goToAnswer()">Answer</ion-button>
       <ion-button fill="clear" class="toolbar-button" (click)="goToCreatePost()">Post</ion-button>
     </ion-buttons>
@@ -31,41 +41,105 @@
 </ion-header>
 
 <ion-content color="light">
-  <ion-list *ngIf="searchResults.length > 0">
-    <ion-card *ngFor="let post of searchResults" class="newsfeed-card">
+  <ion-list>
+    <!-- Post 1 -->
+    <ion-card class="newsfeed-card">
       <ion-item lines="none">
         <ion-avatar slot="start">
-          <ion-icon name="person-circle" style="font-size: 40px;"></ion-icon>
+          <ion-icon name="person-circle" style="font-size: 40px; color: #b0b3b8;"></ion-icon>
         </ion-avatar>
         <ion-label>
-          <h3 class="author-name">{{ post.author }} <span class="role">— {{ post.role }}</span></h3>
-          <p class="date">{{ post.date }}</p>
+          <h3 class="author-name">Vakasiuola Pulete <span class="role">• Follow</span></h3>
+          <p class="date">Mon</p>
         </ion-label>
+        <ion-button fill="clear" slot="end" size="small">
+          <ion-icon name="close-outline"></ion-icon>
+        </ion-button>
       </ion-item>
       <ion-card-content>
-        <h2 class="question-title">{{ post.title }}</h2>
-        <p class="question-preview">{{ post.content | slice:0:120 }}...</p>
-        <img *ngIf="post.image" [src]="post.image" class="post-image" />
+        <div style="font-size:13px; color:#b0b3b8; margin-bottom:6px;">
+          <ion-icon name="earth-outline" style="font-size: 15px; vertical-align: middle;"></ion-icon>
+          <span style="font-weight: 600; color: #e4e6eb;">GLOBAL SPACE.</span>
+        </div>
+        <div class="question-preview" style="margin-bottom:8px;">
+          “So this morning I woke up with my shirt soaking wet and my pants wet. I thought I piss the bed. I rolled over and seen that I had blood covered all over m<span style="color:#1877f2;">... Read more</span>
+        </div>
+        <img class="post-image" src="assets/profile1.jpg" alt="blood" />
       </ion-card-content>
     </ion-card>
-  </ion-list>
-  <ion-list *ngIf="searchResults.length === 0">
-    <ion-card *ngFor="let post of posts.slice(0, 5)" class="newsfeed-card">
+
+    <!-- Post 2 -->
+    <ion-card class="newsfeed-card">
       <ion-item lines="none">
         <ion-avatar slot="start">
-          <ion-icon name="person-circle" style="font-size: 40px;"></ion-icon>
+          <ion-icon name="person-circle" style="font-size: 40px; color: #b0b3b8;"></ion-icon>
         </ion-avatar>
         <ion-label>
-          <h3 class="author-name">{{ post.author }} <span class="role">— {{ post.role }}</span></h3>
-          <p class="date">{{ post.date }}</p>
+          <h3 class="author-name">Anna K. <span class="role">• AI Researcher</span></h3>
+          <p class="date">Mar 01</p>
         </ion-label>
+        <ion-button fill="clear" slot="end" size="small">
+          <ion-icon name="close-outline"></ion-icon>
+        </ion-button>
       </ion-item>
       <ion-card-content>
-        <h2 class="question-title">{{ post.title }}</h2>
-        <p class="question-preview">{{ post.content | slice:0:120 }}...</p>
-        <img *ngIf="post.image" [src]="post.image" class="post-image" />
+        <div class="question-title">How does AI affect creative jobs?</div>
+        <div class="question-preview">
+          As AI tools become more prevalent...
+        </div>
+        <img class="post-image" src="assets/profile1.jpg" alt="AI Impact" />
       </ion-card-content>
     </ion-card>
+
+    <!-- Post 3 -->
+    <ion-card class="newsfeed-card">
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <ion-icon name="person-circle" style="font-size: 40px; color: #b0b3b8;"></ion-icon>
+        </ion-avatar>
+        <ion-label>
+          <h3 class="author-name">Priya Sharma <span class="role">• Teacher</span></h3>
+          <p class="date">Mar 10</p>
+        </ion-label>
+        <ion-button fill="clear" slot="end" size="small">
+          <ion-icon name="close-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+      <ion-card-content>
+        <div class="question-title">Why is education important?</div>
+        <div class="question-preview">
+          Education opens doors to better opportunities...
+        </div>
+      </ion-card-content>
+      <img class="post-image" src="assets/profile1.jpg" alt="paris" />
+    </ion-card>
+
+     <ion-card class="newsfeed-card">
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <ion-icon name="person-circle" style="font-size: 40px; color: #b0b3b8;"></ion-icon>
+        </ion-avatar>
+        <ion-label>
+          <h3 class="author-name">Vakasiuola Pulete <span class="role">• Follow</span></h3>
+          <p class="date">Mon</p>
+        </ion-label>
+        <ion-button fill="clear" slot="end" size="small">
+          <ion-icon name="close-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+      <ion-card-content>
+        <div style="font-size:13px; color:#b0b3b8; margin-bottom:6px;">
+          <ion-icon name="earth-outline" style="font-size: 15px; vertical-align: middle;"></ion-icon>
+          <span style="font-weight: 600; color: #e4e6eb;">GLOBAL SPACE.</span>
+        </div>
+        <div class="question-preview" style="margin-bottom:8px;">
+          “So this morning I woke up with my shirt soaking wet and my pants wet. I thought I piss the bed. I rolled over and seen that I had blood covered all over m<span style="color:#1877f2;">... Read more</span>
+        </div>
+        <img class="post-image" src="assets/profile1.jpg" alt="blood" />
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Add more static posts as needed -->
   </ion-list>
 </ion-content>
 
@@ -77,11 +151,11 @@
     <ion-tab-button [routerLink]="['/answer']">
       <ion-icon name="create-outline" />
     </ion-tab-button>
-    <ion-tab-button [routerLink]="['/notifications']">
-      <ion-icon name="notifications-outline"></ion-icon>
-    </ion-tab-button>
     <ion-tab-button [routerLink]="['/profile']">
       <ion-icon name="person-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button [routerLink]="['/notifications']">
+      <ion-icon name="notifications-outline"></ion-icon>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-footer>
